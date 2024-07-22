@@ -10,7 +10,6 @@ on:
       - testingBranch
   pull_request_review:
     types: [submitted]
-
  steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -25,7 +24,6 @@ on:
 
       - name: Run tests
         run: npm test -- --verbose
-
   approved:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
